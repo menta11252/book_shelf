@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   before_action :set_book, only: [:show, :new, :create, :edit]
-  before_action :set_review, only: [:show, :edit, :update]
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
   def new
     @review = Review.new
   end 
@@ -29,6 +29,12 @@ class ReviewsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @review.destroy
+    redirect_to @review.book, notice: "レビューを削除しました。"
+  end
+
   private 
   def review_params
     params.require(:review).permit(:title, :body, :evaluation)
