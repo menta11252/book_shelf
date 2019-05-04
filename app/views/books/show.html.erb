@@ -24,6 +24,9 @@
   <% end %>
 
 <%= link_to t('.return'), books_path, class: "btn btn-secondary" %>
+
+<hr>
+<%= render partial: "reviews/review", collection: @book.reviews %>
 </div>
 
 
