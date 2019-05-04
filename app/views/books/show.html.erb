@@ -1,4 +1,16 @@
 <div class="col-md-10 offset-md-1 mt-5">
+
+<div class="row">
+
+<div class="col-md-4 md-4">
+<%# ここに画像 %>
+<%= image_tag @book.image.variant(resize:"300x300"),class:"img-thumbnail" %>
+</div>
+<div class="col-md-8">
+<%# ここにタイトル、価格、発売日 %>
+</div>
+</div>
+
   <h2><%= @book.title %></h2>
   <ul>
     <li><b><%= t ".price" %>: </b><%= t(".price_yen", price: (number_with_delimiter @book.price)) %></li>
